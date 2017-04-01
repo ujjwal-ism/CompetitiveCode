@@ -8,29 +8,18 @@ int main(int argc, char const *argv[])
 	int t,n,m,D,q;cin>>t;
 	while(t--){
 		cin>>n>>m>>D;
-		int a[n];
-		for(int i=0;i<n;i++) cin>>a[i];
-		int f = 1;
-		for(int i=0;i<m;i++){
-			int f1 = 0;
-			for(int j=0;j<n;j++){
-				if(a[j]-D>0){
-					a[j] = a[j] - D;
-					f1 = 1;break; 
-				}
-				if(i==m-1 && j==n-1){
-					cout<<"NO"<<endl;
-					f = 0;goto END;
-				}
-			}
-			if(f1 == 0 ){
-				cout<<"NO"<<endl;f = 0;
-				break;
+		int count = 0;
+		for(int i=0;i<n;i++){
+			cin>>q;
+			while(q-D>0){
+				count++;
+				q -= D;
 			}
 		}
-		END:
-		if(f==1)
+		if(count>=m)
 			cout<<"YES"<<endl;
+		else
+			cout<<"NO"<<endl;
 	}
 
 	return 0;
