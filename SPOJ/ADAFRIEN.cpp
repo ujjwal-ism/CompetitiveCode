@@ -9,7 +9,7 @@ typedef unsigned long long int llu;
 
 int main(int argc, char const *argv[])
 {
-	std::ios::sync_with_stdio(false);cin.tie(NULL);
+	//std::ios::sync_with_stdio(false);cin.tie(NULL);
 	int q,k;cin>>q>>k;
 	unordered_map<string,ll> m;
 	for(int i=0;i<q;i++){
@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 		v.push_back(it->second);
 	}
 	
-	sort(v.begin(),v.end(),greater<int>());
+	sort(v.begin(),v.end(),greater<ll>());
 	int l = v.size();
 	int i = 0;
 	ll ans = 0;
@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
 		ans += v[i];
 		i++;
 	}
-	cout<<ans<<endl;
+	cout<<ans;
 
 	return 0;
 }
